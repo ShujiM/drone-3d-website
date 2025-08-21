@@ -245,10 +245,10 @@
                 看板やオブジェの設置をご検討中ですか？まずはご相談ください。
                 お客様のビジョンをカタチにするお手伝いをします。
             </p>
-            <form class="space-y-6">
-                <input type="text" placeholder="お名前" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base">
-                <input type="email" placeholder="メールアドレス" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base">
-                <textarea placeholder="お問い合わせ内容" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"></textarea>
+            <form action="https://formspree.io/f/xqalvjvd" method="POST" class="space-y-6">
+                <input type="text" name="name" placeholder="お名前" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base">
+                <input type="email" name="_replyto" placeholder="メールアドレス" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base">
+                <textarea name="message" placeholder="お問い合わせ内容" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"></textarea>
                 <button type="submit" class="w-full bg-blue-500 text-white font-bold px-6 py-3 rounded-full hover:bg-blue-600 transition-colors shadow-lg text-base sm:text-lg">
                     送信する
                 </button>
