@@ -3,146 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>そらとカタチ工房</title>
-    <link rel="stylesheet" href="style.css">
+    <title>空彩ラボ | ドローン・3DCG・3Dプリントで未来のビジュアル化を</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #3b82f6;
+            margin-top: 8px;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .hero {
+            background-image: url('https://images.pexels.com/photos/1108512/pexels-photo-1108512.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .feature-icon {
+            color: #3b82f6;
+            font-size: 2.5rem;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">そらとカタチ工房</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">ホーム</a></li>
-                    <li><a href="#services">サービス</a></li>
-                    <li><a href="#works">実績</a></li>
-                    <li><a href="#pricing">料金</a></li>
-                    <li><a href="#company">会社概要</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
-                </ul>
-            </nav>
+<body class="bg-gray-50">
+
+    <!-- ヘッダー -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl sm:text-2xl font-bold text-gray-800 leading-tight"><ruby>空彩<rt class="text-xs font-normal">ソライロ</rt></ruby>Lab</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-blue-500 transition-colors">事業概要</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-500 transition-colors">サービス</a>
+                <a href="#contact" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">お問い合わせ</a>
+            </div>
+            <!-- モバイルメニューボタン -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">事業概要</a>
+            <a href="#services" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">サービス</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">お問い合わせ</a>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>空から、カタチをつくる。<br>安全でわかりやすい看板・オブジェ調査と3D提案</h1>
-            <a href="#contact" class="cta-button">お問い合わせ</a>
+    <!-- ヒーローセクション -->
+    <section class="hero text-center py-16 sm:py-20 md:py-24 bg-blue-500 text-white relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+                「空彩ラボ」が未来をビジュアル化します
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                ドローン調査、3DCG合成、3Dプリンター試作を組み合わせ、
+                看板や造形物の完成イメージを施工前に明確にします。
+            </p>
+            <a href="#contact" class="bg-white text-blue-500 font-bold px-6 py-3 text-base sm:px-8 sm:text-lg rounded-full hover:bg-gray-100 transition-colors shadow-lg">
+                今すぐ相談する
+            </a>
         </div>
     </section>
 
-    <section id="services">
-        <div class="container">
-            <h2>サービス</h2>
-            <div class="card-container">
-                <div class="card">
-                    <h3>ドローン調査</h3>
-                    <p>高精度な空撮と測量で安全・迅速な現場調査</p>
+    <!-- 事業概要セクション -->
+    <section id="about" class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-12 section-title inline-block">事業概要</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 事業内容カード1 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md card">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="feature-icon w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">ドローン現場調査</h3>
+                    <p class="text-sm sm:text-base text-gray-600">
+                        高所や狭所の調査を安全かつ効率的に実施。フォトグラメトリ技術で高精度な3Dデータを取得します。
+                    </p>
                 </div>
-                <div class="card">
-                    <h3>3DCGイメージ合成</h3>
-                    <p>設置前に完成イメージを合成し、トラブルを防止</p>
+                <!-- 事業内容カード2 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md card">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="feature-icon w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">3DCGモデリング</h3>
+                    <p class="text-sm sm:text-base text-gray-600">
+                        ドローンで得たデータとCGを合成。看板やオブジェの設置後の完成イメージをリアルに再現します。
+                    </p>
                 </div>
-                <div class="card">
-                    <h3>3Dプリント模型制作</h3>
-                    <p>縮尺模型で施工前の打合せをスムーズに</p>
+                <!-- 事業内容カード3 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md card">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="feature-icon w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-3h8m-1-4a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">3Dプリント試作</h3>
+                    <p class="text-sm sm:text-base text-gray-600">
+                        完成イメージを小型のモックアップとして出力。実際に手に取って検討することで、認識のズレを防ぎます。
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="works">
-        <div class="container">
-            <h2>実績・事例ギャラリー</h2>
-            <p>Before / After 画像スライダー、施工会社・広告代理店向けサンプル案件、3Dプリント模型写真などを掲載します。</p>
-            <!-- Placeholder for gallery -->
-        </div>
-    </section>
-
-    <section id="pricing">
-        <div class="container">
-            <h2>料金プラン</h2>
-            <table>
-                <tr>
-                    <th>プラン</th>
-                    <th>内容</th>
-                </tr>
-                <tr>
-                    <td>ライトプラン</td>
-                    <td>ドローン調査のみ</td>
-                </tr>
-                <tr>
-                    <td>スタンダードプラン</td>
-                    <td>調査＋CG合成</td>
-                </tr>
-                <tr>
-                    <td>プレミアムプラン</td>
-                    <td>調査＋CG合成＋3Dプリント模型</td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <h2>お客様の声</h2>
-            <div class="testimonial">
-                <p>「完成イメージを事前に確認できて安心」</p>
-            </div>
-            <div class="testimonial">
-                <p>「現場調査が安全で効率的になった」</p>
+    <!-- 差別化ポイントセクション -->
+    <section class="py-12 sm:py-16 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-12 section-title inline-block">差別化ポイント</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-left">
+                    <ul class="space-y-6 text-base sm:text-lg">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 font-bold text-xl sm:text-2xl mr-4">✔</span>
+                            <p>
+                                <strong>ビジュアル化までの一貫したサービス:</strong>
+                                調査だけでなく、3DCGと3Dプリントを駆使して「完成イメージ」まで提供できる点が強みです。
+                            </p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 font-bold text-xl sm:text-2xl mr-4">✔</span>
+                            <p>
+                                <strong>トラブルの事前防止:</strong>
+                                顧客は設置後のイメージを事前に確認できるため、施工後の「思っていたのと違う」といったトラブルを大幅に削減します。
+                            </p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 font-bold text-xl sm:text-2xl mr-4">✔</span>
+                            <p>
+                                <strong>直感的な検討:</strong>
+                                3Dプリントされた試作モデルを実際に手に取って検討することで、より具体的なイメージ共有が可能になります。
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <!-- 差別化ポイントのイメージ画像 -->
+                    <img src="https://images.unsplash.com/photo-1704283860614-803aa8be7993?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="ビジュアル化と3Dプリントのイメージ" class="rounded-lg shadow-lg w-full">
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="company">
-        <div class="container">
-            <h2>会社概要</h2>
-            <ul>
-                <li>屋号: そらとカタチ工房</li>
-                <li>所在地: [住所]</li>
-                <li>代表者名: [代表者名]</li>
-                <li>設立年: [設立年]</li>
-                <li>使用機材: ドローン、3Dプリンタ、各種ソフトウェア</li>
-            </ul>
+    <!-- サービス内容セクション -->
+    <section id="services" class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-12 section-title inline-block">提供サービス</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- サービスカード1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md card">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="feature-icon w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">ドローン現場調査</h3>
+                    <p class="text-sm sm:text-base text-gray-600">
+                        高所・狭所の撮影、施工前の下見、フォトグラメトリによる3Dデータ化など、幅広い現場調査に対応します。
+                    </p>
+                </div>
+                <!-- サービスカード2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md card">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="feature-icon w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">3DCG完成イメージ合成</h3>
+                    <p class="text-sm sm:text-base text-gray-600">
+                        ドローンで撮影した現場写真に、CGで作成した完成イメージを合成。クライアントへの提案資料として最適です。
+                    </p>
+                </div>
+                <!-- サービスカード3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md card">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="feature-icon w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-3h8m-1-4a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">3Dプリント試作</h3>
+                    <p class="text-sm sm:text-base text-gray-600">
+                        看板や造形物の縮尺モデルを制作。打ち合わせ時に実際に触って確認できるため、完成への道筋が明確になります。
+                    </p>
+                </div>
+                <!-- サービスカード4 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md card">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="feature-icon w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 10-4 0v1a1 1 0 01-1 1H3a1 1 0 00-1 1v7h22v-7a1 1 0 00-1-1h-3a1 1 0 01-1-1V4a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 00-1 1v7h12v-7a1 1 0 00-1-1h-3a1 1 0 01-1-1V4z"></path></svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">フルパッケージ</h3>
+                    <p class="text-sm sm:text-base text-gray-600">
+                        調査からCG合成、3Dプリント試作、そして実施工支援まで、プロジェクト全体を一貫してサポートします。
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>お問い合わせ</h2>
-            <form action="https://formspree.io/f/xqalvjvd" method="POST">
-                <label for="name">名前:</label>
-                <input type="text" id="name" name="name" required>
+    <!-- 料金プランセクション -->
+    <section class="py-12 sm:py-16 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-12 section-title inline-block">料金プラン（例）</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- プランカード1 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md card">
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">現場調査のみ</h3>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-blue-500 mb-4">¥30,000<span class="text-sm font-normal text-gray-500">～</span></p>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6">ドローンによる高所・狭所調査</p>
+                </div>
+                <!-- プランカード2 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md card">
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">調査 + CG合成</h3>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-blue-500 mb-4">¥60,000<span class="text-sm font-normal text-gray-500">～</span></p>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6">現場調査に加えて、CGで完成イメージを合成</p>
+                </div>
+                <!-- プランカード3 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md card">
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">調査 + CG + 3Dプリント</h3>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-blue-500 mb-4">¥100,000<span class="text-sm font-normal text-gray-500">～</span></p>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6">上記に加え、小型試作品を制作</p>
+                </div>
+                 <!-- プランカード4 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md card border-2 border-blue-500">
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-blue-500">定期契約</h3>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-blue-500 mb-4">¥50,000<span class="text-sm font-normal text-gray-500">～/月</span></p>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6">施工業者様向けのお得な定額プラン</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <label for="email">メールアドレス:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="request-type">依頼内容:</label>
-                <select id="request-type" name="request-type">
-                    <option value="survey">調査</option>
-                    <option value="cg-synthesis">CG合成</option>
-                    <option value="3d-print">模型制作</option>
-                    <option value="other">その他</option>
-                </select>
-
-                <label for="message">メッセージ欄:</label>
-                <textarea id="message" name="message" rows="5"></textarea>
-
-                <button type="submit">送信</button>
+    <!-- お問い合わせセクション -->
+    <section id="contact" class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 text-center max-w-2xl">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-12 section-title inline-block">お問い合わせ</h2>
+            <p class="text-base sm:text-lg text-gray-600 mb-8">
+                看板やオブジェの設置をご検討中ですか？まずはご相談ください。
+                お客様のビジョンをカタチにするお手伝いをします。
+            </p>
+            <form action="https://formspree.io/f/xqalvjvd" method="POST" class="space-y-6">
+                <input type="text" name="name" placeholder="お名前" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base">
+                <input type="email" name="_replyto" placeholder="メールアドレス" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base">
+                <textarea name="message" placeholder="お問い合わせ内容" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"></textarea>
+                <button type="submit" class="w-full bg-blue-500 text-white font-bold px-6 py-3 rounded-full hover:bg-blue-600 transition-colors shadow-lg text-base sm:text-lg">
+                    送信する
+                </button>
             </form>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>事業者情報: [住所] [連絡先]</p>
-            <div class="sns-links">
-                <a href="#">Instagram</a>
-                <a href="#">X</a>
-                <a href="#">YouTube</a>
-            </div>
-            <p>&copy; 2025 そらとカタチ工房. All rights reserved.</p>
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm">&copy; 2025 空彩ラボ. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // モバイルメニューを閉じる
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
